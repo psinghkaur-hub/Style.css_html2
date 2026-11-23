@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Parneet Singh Kaur">
+    <title>Pràctica 2 CSS - Selectors, Cascada i Box Model</title>
+    
+    <!-- 1. Ubicació Externa -->
+    <link rel="stylesheet" href="estils.css">
+
+
+    <!-- 2. Ubicació Interna -->
+    <style>
+        .caixa-avis {
+            background-color: #dbeafe; /* Blau clar */
+            border-color: #eab308;/*Groc clar*/
+            color: #1e293b;/* Blau clar */
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        
+        * {
+          box-sizing: border-box;
+        }
+
+    body{ 
+        font-family: Segoe UI, Tahoma, sans-serif;
+        color: #1e293b;
+        background-color: #f8fafc;
+        }
+    
+ #capcalera {
+            text-align: center;
+            color: white;
+            background-color: #0f172a;
+            padding: 20px;
+        }
+
+        .menu li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        #contingut {
+            width: 85%;
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        .fitxa {
+            background-color: white;
+            border: 2px solid #cbd5e1;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .etiqueta-inline {
+            display: inline-block;
+            background-color: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 12px;
+        }
+
+        #contingut > section {
+            background-color: white;
+            padding: 25px;
+        }
+
+        h2 + p {
+            font-weight: bold;
+            color: #0284c7;
+        }
+
+        h2 ~ p {
+            font-size: 1.05rem;
+        }
+
+        a[target="_blank"] {
+            color: #15803d;
+            font-weight: bold;
+        }
+
+        a[href$=".pdf"] {
+            color: #b91c1c;
+        }
+
+        nav a:hover {
+            background-color: #334155;
+            border-radius: 4px;
+        }
+
+        a:last-of-type{
+            margin-bottom: 0px;
+            border-left: 6px solid #0284c7;
+        }
+
+        .fitxa h3::before {
+            content: "▸ ";
+            color: #0284c7;
+        }
+
+        a[href$=".pdf"]::after {
+            content: " [PDF]";
+        }
+
+        .intro::first-letter {
+            font-size: 1.5rem;
+            color: #0284c7;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="capcalera">
+        <h1>Portal de Recursos DAM</h1>
+        <nav class="menu">
+            <ul>
+                <li><a href="#inici">Inici</a></li>
+                <li><a href="https://developer.mozilla.org" target="_blank">MDN Docs</a></li>
+                <li><a href="https://validator.w3.org" target="_blank">Validador W3C</a></li>
+                <li><a href="apunts-css.pdf">Descarregar PDF</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contingut">
+        <!-- 3. Ubicació En Línia (Inline) -->
+        <div class="caixa-avis" style="background-color: #fee2e2; border-color: #ef4444;">
+            <p><strong>Atenció:</strong> Aquest panell comprova la prioritat de la cascada CSS.</p>
+        </div>
+
+        <section class="llistat-recursos">
+            <h2>Guia de Referència</h2>
+            <p class="intro">Aquest paràgraf va immediatament després del títol H2.</p>
+            <p>Aquest és un segon paràgraf germà general dins de la secció.</p>
+
+            <article class="fitxa">
+                <h3>1. Model de Caixes (Box Model)</h3>
+                <p>L'ús de <span class="etiqueta-inline">box-sizing: border-box</span> evita que el padding augmenti l'amplada total de l'element.</p>
+                <a href="https://www.w3schools.com/css/css3_box-sizing.asp" target="_blank">Especificació oficial</a>
+            </article>
+
+            <article class="fitxa">
+                <h3>2. Selectors Avançats</h3>
+                <p>Permeten aplicar estils precisos sense omplir l'HTML de classes innecessàries.</p>
+                <a href="guia-selectors.pdf">Guia en PDF</a>
+            </article>
+        </section>
+    </main>
+    </style>
+
+    <footer>
+        <p>Mòdul 04 - Llenguatges de Marques (DAM)</p>
+    </footer>
+
+</body>
+</html>
